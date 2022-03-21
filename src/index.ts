@@ -1,14 +1,13 @@
 import {config} from 'dotenv';
-
 config();
 
-import express from 'express';
-
-const app = express();
+import { createApp } from './utils/createApp';
 const PORT = process.env.PORT || 5001;
 
 async function main(){
+    console.log(`Server is running on ${process.env.ENVIROMENT} mode`);
     try {
+        const app = createApp();
         app.listen(PORT,()=>console.log(`Running on port ${PORT}`));
     } catch (error) {
         console.log(error);
