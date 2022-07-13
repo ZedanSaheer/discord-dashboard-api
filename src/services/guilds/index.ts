@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ObjectId } from "mongoose";
 import { User } from "../../database/schemas";
 import { DISCORD_API_URL } from "../../utils/consts";
 import { PartialGuild } from "../../utils/types";
@@ -13,7 +12,7 @@ export async function getBotsGuildsService() {
     })
 }
 
-export async function getUserGuildsServices(id:ObjectId) {
+export async function getUserGuildsServices(id:string) {
     const user = await User.findById(id);
     if(!user) throw new Error('No user found');
 

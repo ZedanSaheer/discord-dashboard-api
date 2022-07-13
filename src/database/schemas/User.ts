@@ -1,7 +1,7 @@
-import mongoose, { ObjectId, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 export interface User {
-    id:ObjectId;
+    id:string;
     discordId:string;
     accessToken:string;
     refreshToken:string;

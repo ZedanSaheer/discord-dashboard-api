@@ -6,7 +6,12 @@ This repositary contains the server logic for a Discord Dashboard that uses the 
 
 ## Authorization 
 
-## Test Coverage
+## Test Coverage 
+
+### Controllers 
+
+| Name | Coverage |
+| -----| -------- |
 
 ### How to authenticate your Discord profile? 
 
