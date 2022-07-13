@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.12",
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "mongoose": "^6.4.3",
     "passport": "^0.5.2",
     "passport-discord": "^0.1.4",
     "passport-oauth2": "^1.6.1"
