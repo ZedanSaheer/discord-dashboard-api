@@ -14,9 +14,6 @@ This repositary contains the server logic for a Discord Dashboard that uses the 
 ### Controllers 
 
 
-- **GUILDS**
-..*
-
 ## FAQ
 
 
