@@ -11,19 +11,6 @@ This repositary contains the server logic for a Discord Dashboard that uses the 
 ## Test Coverage 
 
 
-### Controllers 
-
-
-## FAQ
-
-
-### How to authenticate your Discord profile? 
-
-```
-{host_url}/api/auth/discord
-```
-
-
 
 
 
