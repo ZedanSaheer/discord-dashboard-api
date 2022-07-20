@@ -9,7 +9,8 @@ router.get('/discord',passport.authenticate('discord'),(req,res)=>{
 });
 
 router.get('/discord/redirect',passport.authenticate('discord'),(req,res)=>{
-    res.sendStatus(200);
+    //Redirect user to menu page when auth is true 
+    res.redirect('http://localhost:3000/menu');
 });
 
 //Routes that check the login status of user
