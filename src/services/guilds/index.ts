@@ -37,3 +37,9 @@ export async function getMutualGuildsServices(id: string) {
 };
 
 
+export function getGuildService(id: string) {
+    const token = process.env.DISCORD_BOT_TOKEN;
+    return axios.get(`${DISCORD_API_URL}/guilds/${id}`, {
+        headers: { Authorization: `Bot ${token}` }
+    });
+}

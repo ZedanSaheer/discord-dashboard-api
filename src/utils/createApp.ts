@@ -38,6 +38,9 @@ export function createApp(): Express {
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Controlling rate limiting by delaying consecutive calls
+app.use((req,res,next)=>setTimeout(()=>next(),800));
+
 app.use('/api', routes);
 return app;
 }
