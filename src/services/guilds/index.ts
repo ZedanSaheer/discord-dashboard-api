@@ -39,7 +39,16 @@ export async function getMutualGuildsServices(id: string) {
 
 export function getGuildService(id: string) {
     const token = process.env.DISCORD_BOT_TOKEN;
+    //Fetch a guild data based on id
     return axios.get(`${DISCORD_API_URL}/guilds/${id}`, {
+        headers: { Authorization: `Bot ${token}` }
+    });
+}
+
+export function getGuildChannels(id:string){
+    const token = process.env.DISCORD_BOT_TOKEN;
+    //Fetch all channel inside a specific guild based on id
+    return axios.get(`${DISCORD_API_URL}/guilds/${id}/channels`, {
         headers: { Authorization: `Bot ${token}` }
     });
 }

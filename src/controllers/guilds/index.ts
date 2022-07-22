@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../../database/schemas/User";
-import { getBotsGuildsService, getGuildService, getMutualGuildsServices, getUserGuildsService } from "../../services/guilds";
+import { getBotsGuildsService, getGuildChannels, getGuildService, getMutualGuildsServices, getUserGuildsService } from "../../services/guilds";
 
 
 export async function getGuildsController(req: Request, res: Response) {
@@ -40,6 +40,17 @@ export async function getGuildController(req: Request, res: Response) {
     const { id } = req.params;
     try {
         const { data: guild } = await getGuildService(id);
+        res.send(guild);
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(400).send({ message: "Error" });
+    }
+}
+
+export async function getGuildChannelsController(req: Request, res: Response) {
+    const { id } = req.params;
+    try {
+        const { data: guild } = await getGuildChannels(id);
         res.send(guild);
     } catch (error) {
         console.log(error);

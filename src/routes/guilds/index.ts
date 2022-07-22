@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getGuildController, getGuildsController, getGuildsPermissionController } from "../../controllers/guilds";
+import { getGuildChannelsController, getGuildController, getGuildsController, getGuildsPermissionController } from "../../controllers/guilds";
 import { isAuthenticated } from "../../utils/middleware";
 
 const router = Router();
@@ -9,5 +9,6 @@ const router = Router();
 router.get('/', isAuthenticated, getGuildsController); //This route invokes the fetch guilds controller 
 router.get('/:id/permissions',isAuthenticated,getGuildsPermissionController); //This route invokes the guilds controller for checking permission status
 router.get('/:id',isAuthenticated,getGuildController); //This route invokes the fetch a single guild controller
+router.get('/:id/channels',isAuthenticated,getGuildChannelsController); //This route invokes the fetch a single guild controller
 
 export default router
