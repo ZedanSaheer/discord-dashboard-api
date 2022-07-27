@@ -27,7 +27,7 @@ router.get('/logout', ((req, res) => {
 //Routes that check the login status of user
 router.get('/status', (req, res) => {
     //Send unauthorized code if user does not exist in session
-    req.user ? res.send(req.user) : res.sendStatus(401).send({ status: "Unauthorized" });
+    req.user ? res.sendStatus(200).send(req.user) : res.sendStatus(401).send({ status: "Unauthorized" });
 });
 
 export default router

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { User } from "../../database/schemas";
 import { DISCORD_API_URL } from "../../utils/consts";
-import { PartialGuild } from "../../utils/types";
+import { PartialChannel, PartialGuild } from "../../utils/types";
 
 export async function getBotsGuildsService() {
     const token = process.env.DISCORD_BOT_TOKEN;
@@ -48,7 +48,7 @@ export function getGuildService(id: string) {
 export function getGuildChannels(id:string){
     const token = process.env.DISCORD_BOT_TOKEN;
     //Fetch all channel inside a specific guild based on id
-    return axios.get(`${DISCORD_API_URL}/guilds/${id}/channels`, {
+    return axios.get<PartialChannel[]>(`${DISCORD_API_URL}/guilds/${id}/channels`, {
         headers: { Authorization: `Bot ${token}` }
     });
 }

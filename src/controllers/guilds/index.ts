@@ -37,22 +37,29 @@ export async function getGuildsPermissionController(req: Request, res: Response)
 }
 
 export async function getGuildController(req: Request, res: Response) {
+    //initialize user from request with User type inteface 
+    //Get id of the guild from request param
     const { id } = req.params;
     try {
         const { data: guild } = await getGuildService(id);
         res.send(guild);
     } catch (error) {
+        //Returns if error
         console.log(error);
         res.sendStatus(400).send({ message: "Error" });
     }
 }
 
 export async function getGuildChannelsController(req: Request, res: Response) {
+    //initialize user from request with User type inteface 
+    //Get id of the guild from request param
     const { id } = req.params;
     try {
-        const { data: guild } = await getGuildChannels(id);
-        res.send(guild);
+        //Retreives all channels of a guild based on id
+        const { data: channel } = await getGuildChannels(id);
+        res.send(channel);
     } catch (error) {
+        //Returns if error
         console.log(error);
         res.sendStatus(400).send({ message: "Error" });
     }
